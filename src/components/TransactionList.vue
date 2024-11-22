@@ -17,11 +17,17 @@
 <script setup>
 
 defineProps({
-    transactions:{
-        type : Array,
-        required : true
+    transactions: {
+        type: Array,
+        required: true
     }
 })
+
+const emit = defineEmits(['transactionDeleted'])
+
+const deleteTransaction = (id) => {
+    emit('transactionDeleted', id)
+}
 
 </script>
 

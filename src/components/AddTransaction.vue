@@ -3,12 +3,12 @@
     <form id="form" @submit.prevent="onSubmit">
         <div class="form-control">
             <label for="text">Text</label>
-            <input type="text" id="text" placeholder="Enter text..." v-model="form.text" />
+            <input autocomplete="off" type="text" id="text" placeholder="Enter text..." v-model="form.text" />
         </div>
         <div class="form-control">
             <label for="amount">Amount <br />
                 (negative - expense, positive - income)</label>
-            <input type="text" id="amount" placeholder="Enter amount..." v-model="form.amount" />
+            <input autocomplete="off" type="text" id="amount" placeholder="Enter amount..." v-model="form.amount" />
         </div>
         <button class="btn">Add transaction</button>
     </form>
