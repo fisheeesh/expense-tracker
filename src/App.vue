@@ -71,15 +71,30 @@ const handleTranscationDeleted = (id) => {
 }
 
 onMounted(() => {
+  /**
+   * ? To check localstorage (in application tab), we're gonna run it through JSON.parse()
+   * ? Cuz only string in localstorage, this will turn it back into a regular array
+   */
   const saveTransactions = JSON.parse(localStorage.getItem('transactions'))
 
+  /**
+   * ? If there are any saveTransactions, then set the transactions to the saveTransactions
+   */
   if (saveTransactions) {
     transactions.value = saveTransactions
   }
 })
 
-//Save to local storage
+/**
+ * ? We make to sure that if we add or delete, it changes in localstorage
+ * ? Whether we create or delete, we need to save the rest of items (for delete) and
+ * ? save all the items to local storage
+ * todo then call this fucntion when we add or delete
+ */
 const saveTransactionsToLocalStorage = () => {
+  /**
+   * ? setItem() with key and value
+   */
   localStorage.setItem('transactions', JSON.stringify(transactions.value))
 }
 // watch(transactions, () => {
