@@ -1,6 +1,14 @@
 # vue-expense-tracker
 
-This template should help get you started developing with Vue 3 in Vite.
+## Features
+
+- Add and Remove Expenses/Income
+- Track Balance
+- Save Data to Local Storage
+- Vue Toastification for Notifications
+- `<script setup>` Syntax
+
+![Expense Tracker Screenshot](public/screen.png)
 
 ## Recommended IDE Setup
 
