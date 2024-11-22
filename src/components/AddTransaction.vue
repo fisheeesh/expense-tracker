@@ -20,7 +20,7 @@ import { useToast } from 'vue-toastification';
 
 const toast = useToast();
 
-const emit = defineEmits( ['transactionSubmitted'])
+const emit = defineEmits(['transactionSubmitted'])
 
 const form = reactive({
     text: null,
@@ -28,14 +28,21 @@ const form = reactive({
 })
 
 const onSubmit = () => {
-    
-    if(!form.text || !form.amount){
+
+    if (!form.text || !form.amount) {
         toast.error('Both fields must be filled')
         return;
     }
-    // console.log(form.text, form.amount)
-    form.text = ''
-    form.amount = ''
+    else {
+        // console.log(form.text, form.amount)
+        const transactionData = {
+            text: form.text,
+            amount: parseFloat(form.amount)
+        }
+        emit('transactionSubmitted', transactionData)
+        form.text = ''
+        form.amount = ''
+    }
 }
 
 </script>
