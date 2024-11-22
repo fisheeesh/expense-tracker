@@ -3,10 +3,15 @@
     <h1 id="balance">${{ total }}</h1>
 </template>
 
-<script>
-export default {
+<script setup>
+defineProps({
+    total : {
+        type : Number, 
+        required : true
+    }
+})
 
-}
+
 </script>
 
 <style></style>
